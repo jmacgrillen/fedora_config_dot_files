@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# If the user has passed in a directory name use it, otherwise
+# use the current directory.
+if [[ -z $1 ]]; then
+	DIRECTORY="./"
+else
+	if [ -d "$1" ]; then
+		DIRECTORY=$1
+	else
+		echo "The directory name supplied does not exist."
+		exit 1
+	fi
+fi
+
+# Start a new tmux session
+
+# Divide windows in classic files on the left with editor on the right and
+# a terminal just below the editor. Resize the panes and then lauch the apps.
+# For the file tree use Yazi
+# For the editor use Helix
+tmux new -s MacDE -c "$DIRECTORY" \; \
+split-window -h \; \
+split-window -v \; \
+resize-pane -t 1 -L 70 \; \
+resize-pane -t 2 -D 12 \; \
+send-key -t 1 "yazi" Enter \; \
+send-key -t 2 "hx" Enter \; \
+select-pane -t 1 \; \
+attach 
+

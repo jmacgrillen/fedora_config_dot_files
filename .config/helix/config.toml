@@ -1,0 +1,68 @@
+theme = "catppuccin_mocha"
+
+[editor]
+line-number = "relative"
+auto-format = true
+auto-completion = true
+true-color = true
+rulers = [80]
+bufferline = "multiple"
+cursorline = true
+color-modes = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+render = true
+
+[editor.statusline]
+left = ["mode", "version-control", "spinner", "diagnostics"]
+center = ["file-name"]
+right = ["file-type", "spacer", "file-encoding", "file-line-ending", "position"]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+separator = "|"
+
+[keys.normal]
+# Jump between buffers
+C-right = "goto_next_buffer"
+C-left = "goto_previous_buffer"
+# Git integration with gitui
+C-g = [ ":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
+# Windows user for years, s these are just second nture to me.
+C-z = "undo"
+C-c = "yank"
+C-v = "paste_after"
+C-x = ":buffer-close!"
+# Jump to end and start of file.
+S-g = "goto_file_end"
+S-f = "goto_file_start"
+# Can't do dd so shift d is as good as it gets
+S-d = [ "extend_to_line_bounds", "delete_selection"]
+
+[keys.insert]
+C-z = "undo"
+C-v = "paste_after"
+
+[keys.select]
+#C-c = "yank"
+#C-v = "paste_after"
+
+
+[editor.whitespace]
+render = "all"
+
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+nnbsp = "␣"
+tab = "→"
+newline = "⏎"
+tabpad = "·"

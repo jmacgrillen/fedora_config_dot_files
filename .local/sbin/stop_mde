@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Quick command to kill tmux
+tmux kill-server
