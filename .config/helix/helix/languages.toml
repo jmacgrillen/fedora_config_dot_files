@@ -1,0 +1,15 @@
+[[language]]
+name = "python"
+auto-format = true
+
+[language.formatter]
+command = "black"
+args = [
+"-", # stdin
+"--quiet",
+"--line-length=79",
+]
+
+[language-server.pylsp.config.pylsp]
+plugins.ruff.enabled = true
+plugins.black.enabled = true
