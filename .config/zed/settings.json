@@ -1,0 +1,64 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "assistant": {
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-7-sonnet-latest"
+    },
+    "version": "2"
+  },
+  "auto_install_extensions": {
+    "dart": true,
+    "git-firefly": true,
+    "ruff": true,
+    "xcode-themes": true,
+    "toml": true
+  },
+  "icon_theme": "VSCode Great Icons Theme",
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+  "vim_mode": true,
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "format_on_save": "on",
+  "hover_popover_enabled": true,
+  "show_whitespaces": "all",
+  "wrap_guides": [79],
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Nord"
+  },
+  "edit_predictions": { "mode": "subtle" },
+  "terminal": {
+    "detect_venv": {
+      "on": {
+        "directories": [".venv", "venv"],
+        "activate_script": "default"
+      }
+    }
+  },
+  "languages": {
+    "Python": {
+      "tab_size": 4,
+      "preferred_line_length": 79,
+      "enable_language_server": true,
+      "language_servers": ["pyright", "black"],
+      "formatter": "language_server",
+      "format_on_save": {
+        "external": {
+          "command": "/usr/bin/black",
+          "arguments": ["-"]
+        }
+      }
+    }
+  }
+}
