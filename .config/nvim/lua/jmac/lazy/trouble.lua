@@ -7,19 +7,8 @@ return {
     keys = {
         {
             "<leader>xx",
-            "<cmd>Trouble diagnostics toggle<cr>",
+            "<cmd>Trouble diagnostics toggle win.type=split win.position=right<cr>",
             desc = "Diagnostics (Trouble)",
-        },
-    },
-    modes = {
-        test = {
-            mode = "diagnostics",
-            preview = {
-            type = "split",
-            relative = "win",
-            position = "right",
-            size = 0.3,
-            },
         },
     },
 }

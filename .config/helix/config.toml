@@ -35,10 +35,8 @@ separator = "|"
 
 [keys.normal]
 # Jump between buffers
-C-right = "goto_next_buffer"
-C-left = "goto_previous_buffer"
-# Insert Python docstring move_line_down
-C-S-d = ["extend_to_line_bounds", "yank_main_selection_to_clipboard", "collapse_selection", "open_below", ':insert-output ~/.config/helix/scripts/docstring_gen.py "$(xclip -o -selection clipboard)" "google"', "format_selections"]
+S-l = "goto_next_buffer"
+S-h = "goto_previous_buffer"
 # Git integration with gitui
 C-g = [ ":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
 # Windows user for years, so these are just second nature to me.
@@ -51,6 +49,7 @@ S-g = "goto_file_end"
 S-f = "goto_file_start"
 # Can't do dd so shift d is as good as it gets
 S-d = [ "extend_to_line_bounds", "delete_selection"]
+S-y = "yank_joined_to_clipboard"
 
 [keys.insert]
 C-z = "undo"
