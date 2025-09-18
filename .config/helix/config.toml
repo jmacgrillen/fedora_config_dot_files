@@ -5,6 +5,7 @@ line-number = "relative"
 auto-format = true
 auto-completion = true
 auto-pairs = true
+auto-info = true
 true-color = true
 completion-replace = true
 rulers = [80]
@@ -12,6 +13,7 @@ bufferline = "always"
 cursorline = true
 color-modes = true
 indent-heuristic = "tree-sitter"
+clipboard-provider = "wayland"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -39,11 +41,7 @@ S-l = "goto_next_buffer"
 S-h = "goto_previous_buffer"
 # Git integration with gitui
 C-g = [ ":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
-# Windows user for years, so these are just second nature to me.
 C-z = "undo"
-C-c = "yank"
-C-v = "paste_after"
-C-x = ":buffer-close!"
 # Jump to end and start of file.
 S-g = "goto_file_end"
 S-f = "goto_file_start"
@@ -53,12 +51,6 @@ S-y = "yank_joined_to_clipboard"
 
 [keys.insert]
 C-z = "undo"
-C-v = "paste_after"
-
-[keys.select]
-#C-c = "yank"
-#C-v = "paste_after"
-
 
 [editor.whitespace]
 render = "all"
