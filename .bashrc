@@ -11,6 +11,11 @@ if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:$HOME/.local/sbin" ]]; then
 fi
 export PATH
 
+export LANG="en_GB.UTF-8"
+LC_CTYPE="en_GB.UTF-8"
+LC_NUMERIC="en_GB.UTF-8"
+export LC_ALL="en_GB.UTF-8"
+
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
@@ -77,6 +82,9 @@ export PROMPT_COMMAND=build_prompt
 # Rust environment change
 . "$HOME/.cargo/env"
 
-export EDITOR=/usr/bin/hx
+export EDITOR=/usr/bin/helix
 
 unset rc
+
+fastfetch
+

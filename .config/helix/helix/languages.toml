@@ -1,6 +1,9 @@
 [[language]]
 name = "python"
 auto-format = true
+language-servers = ["pyright", "ruff"]
+shebangs = ["python"]
+comment-token = "#"
 
 [language.formatter]
 command = "black"
@@ -10,6 +13,19 @@ args = [
 "--line-length=79",
 ]
 
-[language-server.pylsp.config.pylsp]
-plugins.ruff.enabled = true
-plugins.black.enabled = true
+[language-server.pyright]
+command = "pyright-langserver"
+args = ["--stdio"]
+
+[language-server.pyright.config]
+reportMissingTypeStubs = false
+
+[language-server.pyright.config.python.analysis]
+typeCheckingMode = "basic"
+autoImportCompletions = true
+
+[language-server.ruff]
+command = "ruff-lsp"
+
+[language-server.ruff.config]
+settings = {args = []}
