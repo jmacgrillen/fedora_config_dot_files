@@ -25,7 +25,7 @@ typeCheckingMode = "basic"
 autoImportCompletions = true
 
 [language-server.ruff]
-command = "ruff-lsp"
+command = "ruff"
 
 [language-server.ruff.config]
 settings = {args = []}
