@@ -16,6 +16,8 @@ LC_CTYPE="en_GB.UTF-8"
 LC_NUMERIC="en_GB.UTF-8"
 export LC_ALL="en_GB.UTF-8"
 
+export FZF_DEFAULT_OPTS='--layout=reverse --height=40% --info=inline --border'
+
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
@@ -41,6 +43,7 @@ alias du="du -ch"
 alias top="btop"
 alias cp="cp -i"
 alias mv="mv -i"
+alias hx="helix"
 
 # Custom prompt.
 RESET_COLORS="\[\033[00m\]"
@@ -79,7 +82,7 @@ get_venv_name() {
     # Check if the VIRTUAL_ENV variable is set
     if [[ -n "$VIRTUAL_ENV" ]]; then
         # Use basename to extract the directory name (the venv name)
-        local venv_name="$(basename "$VIRTUAL_ENV")"
+        local venv_name="$(basename "$VIRTUAL_ENV_PROMPT")"
         
         # Strip a single leading dot if it exists
         if [[ "$venv_name" =~ ^\. ]]; then
@@ -125,3 +128,13 @@ unset rc
 
 fastfetch
 
+# >>> FZF integration added below <<<
+
+# Check if fzf is installed and source the key bindings and completion scripts.
+if [ -f /usr/share/fzf/key-bindings.bash ]; then
+    . /usr/share/fzf/key-bindings.bash
+fi
+
+if [ -f /usr/share/fzf/completion.bash ]; then
+    . /usr/share/fzf/completion.bash
+fi
